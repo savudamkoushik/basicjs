@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Places | Avara</title>
+    <link rel="stylesheet" href="site.css" type="text/css"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/"></a>Home</li>
+                <li><a href="places.html">places</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside><img src="images/sachin.jpeg" alt="Logo"></aside>
+        <article>
+           <section class="colums-desktop">
+               <div class="pie">
+                   <img src="images/coorg.png" alt="coorg">
+                   <div class="columns">
+                       <div class="title">coorg</div>
+                       <div class="price">100</div>
+                   </div>
+                   <p class="desc">coorg hill station </p>
+                   <button data-order="coorg">Order</button>
+               </div>
+               <div class="pie">
+                    <img src="images/coorg.png" alt="ooty">
+                    <div class="columns">
+                        <div class="title">Ooty</div>
+                        <div class="price">100</div>
+                    </div>
+                    <p class="desc">ooty hill station </p>
+                    <button data-order="ooty">Order</button>
+                </div>
+           </section>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="/"></a>Home</li>
+                <li><a href="places.html">places</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+<script>
+    window.addEventListener("DOMContentLoaded",function(e){
+        const orderButtons=document.querySelectorAll("button[data-order]");
+        orderButtons.forEach(function(btn){
+            btn.addEventListener("click",function(but){
+                // console.log(but);
+                const button=but.currentTarget;
+                const parent=btn.parentNode;
+                console.log(parent+" "+button);
+                const order={
+                    id:btn.getAttribute("data-order"),
+                    price:parent.querySelector(".price").innerText,
+                    title:parent.querySelector(".title").innerText,
+                    desc:parent.querySelector(".desc").innerText
+                }
+                console.log(order);
+                localStorage.setItem("order",JSON.stringify(order));
+                const url=window.location.href.replace("places.html","order.html");
+                window.location.href=url;
+            });
+        });
+    });
+</script>
+</html>

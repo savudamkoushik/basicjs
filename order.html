@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avara</title>
+    <link rel="stylesheet" href="site.css" type="text/css"/>
+    <style>
+        .input-group{
+            margin-bottom: 20px;
+        }
+        .input-group input
+        .input-group select{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #999;
+            border-radius: 2px;
+        }
+        lable{
+            font-weight: 600;
+        }
+        input[type="reset"]{
+            background: transparent;
+            border: 0;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        input[type="submit"]{
+            border: solid 1px #999;
+            border-radius: 2px;
+            padding: 10px;
+        }
+        @media screen and (min-width : 768px){
+            .pie{
+                margin-left: 0;
+            }
+            article{
+                width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/"></a>Home</li>
+                <li><a href="places.html">places</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside><img src="images/sachin.jpeg" alt="Logo"></aside>
+        <h1>order</h1>
+        <article>
+            <div class="pie">
+                <img src="" alt="">
+                <div class="columns">
+                    <div class="title"></div>
+                    <div class="price"></div>
+                </div>
+                <p class="desc"></p>
+            </div>
+            <form  method="POST">
+                <input type="hidden" name="pie-order" id="pie-order"/>
+                <div class="input-group">
+                    <div><label for="first-name">firstName</label></div>
+                    <div><input type="text" name="first-name" id="first-name"></div>
+                </div>
+                <div class="input-group">
+                    <div><label for="address">Address</label></div>
+                    <div><input type="text" name="address" id="address"></div>
+                </div>
+                <div class="input-group">
+                    <div><label for="state">State</label></div>
+                    <select name="state" id="state">
+                        <option value="" selected>[select one]</option>
+                        <option value="Telangana">Ts</option>
+                        <option value="AP" selected>AP</option>
+                    </select>
+                </div>
+                
+                <input type="submit" value="order"/>
+                <input type="reset" value="reset"/>
+            </form>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="/"></a>Home</li>
+                <li><a href="places.html">places</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+<script>
+    window.addEventListener("DOMContentLoaded",function(e){
+        const order=localStorage.getItem("order");
+        if(order){
+            const pieOrder=JSON.parse(order);
+            const pie=document.querySelector(".pie");
+            document.querySelector("#pie-order").value=pieOrder;
+            pie.querySelector(".title").innerHTML=pieOrder.title;
+            pie.querySelector(".desc").innerHTML=pieOrder.desc;
+            pie.querySelector(".price").innerHTML=pieOrder.price;
+            // pie.querySelector(".title").innerHTML=pieOrder.title;
+            console.log(pieOrder.id);
+            pie.querySelector("img").setAttribute("src",`images/${pieOrder.id}.png`);
+            pie.querySelector("img").setAttribute("title",pieOrder.title);
+            
+        }
+    });
+</script>
+
+</html>
