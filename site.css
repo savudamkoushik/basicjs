@@ -54,12 +54,12 @@ h2{
    }
     
 article{
-    margin: 5em 10em 6em 2em;
+    margin: 5em 7em 6em 5em;
     width:25em;
     height:25em;
     background-color:#ffffff;
-    border: 1px;
-    opacity:0.5;
+    border: 0.1px;
+    opacity:0.2;
 }
 footer{
     padding:15px;
