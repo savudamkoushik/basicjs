@@ -54,12 +54,12 @@ h2{
    }
     
 article{
-    margin: 30px 100px 30px 25px;
-    width:100em;
-    height: 100em;
+    /*margin: 30px 100px 30px 25px;*/
+    width:50em;
+    height:50em;
     background-color:#ffffff;
     border: 1px;
-    opacity:0.4;
+    opacity:0.5;
 }
 footer{
     padding:15px;
