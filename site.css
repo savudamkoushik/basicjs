@@ -6,7 +6,7 @@ html,body{
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #d9fff7;
+    background-color: #00ffcc;
 }
 p{
     margin: 0.5em 0 0.5em 0;
@@ -17,7 +17,7 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    background-color:#d9fff7;
+    background-color:#00ffcc;
     padding: 10px;
 }
 nav a:hover,
@@ -38,7 +38,7 @@ main{
     display: block;
     background: url("images/travel.png");
     background-attachment:fixed;
-    background-size:cover;
+    background-repeat:no-repeat;
     padding-top: 3.5em;
     padding-bottom: 3.5em;
     min-height: 85%;
