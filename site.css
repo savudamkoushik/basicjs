@@ -54,9 +54,9 @@ h2{
    }
     
 article{
-    /*margin: 30px 100px 30px 25px;*/
-    width:50em;
-    height:50em;
+    margin: 5em 10em 6em 2em;
+    width:25em;
+    height:25em;
     background-color:#ffffff;
     border: 1px;
     opacity:0.5;
