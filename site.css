@@ -42,7 +42,7 @@ main{
     background: url("images/travel.png");
     background-attachment:fixed;
     background-repeat:no-repeat;
-    background-size=100% 100%;
+    background-size:100% 100%;
     padding-top: 3.5em;
     padding-bottom: 3.5em;
     min-height: 85%;
