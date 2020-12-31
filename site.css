@@ -37,6 +37,8 @@ nav>ul>li{
 main{
     display: block;
     background: url("images/travel.png");
+    background-attachment:fixed;
+    background-size:cover;
     padding-top: 3.5em;
     padding-bottom: 3.5em;
     min-height: 85%;
